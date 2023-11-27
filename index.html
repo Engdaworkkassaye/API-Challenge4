@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+ 
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .choices-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+#high-scores-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clear-scores,
+#go-back {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+</style>
+
+<body>
+  <div class="container">
+    <h1>Coding Quiz</h1>
+    <div id="question-container">
+      <h2 id="question"></h2>
+      <ul id="choices"></ul>
+    </div>
+    <div id="timer">Time: <span id="time">60</span> seconds</div>
+    <button id="start-btn" style="margin-top: 20px; margin-left: 200px;">Start Quiz</button>
+    <form id="score-form" style="display: none;">
+      <p style="display: flex; align-items: center; justify-content: center; margin: 10px 0;">
+        <label for="initials" style="margin-right: 10px;">Enter Initials:</label>
+        <input type="text" id="initials" style="flex: 1; padding: 8px;">
+        <button type="submit" id="submit-score" style="padding: 8px 16px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">Submit</button>
+      </p>
+    </form>
+    <div id="high-scores-container" style="display: none;">
+      <h2>High Scores</h2>
+      <ol id="high-scores-list"></ol>
+      
+     
+      <button id="clear-scores" style="display: none;">Clear Scores</button>
+      <button id="go-back" style="display: none;">Go Back</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
